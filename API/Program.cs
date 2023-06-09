@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -17,6 +19,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(Options => Options.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader());
 
 app.UseAuthorization();
 
