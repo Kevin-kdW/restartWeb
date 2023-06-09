@@ -4,7 +4,7 @@ import { Route, createBrowserRouter, createRoutesFromElements } from 'react-rout
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />} />
+    //<Route path="/" element={<RootLayout />} />
   )
 )
 
