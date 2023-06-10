@@ -1,6 +1,13 @@
+using API.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<Lab6Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Lab6Context") ?? 
+    throw new InvalidOperationException("CString for 'Lab6Context' isn't working"))
+);
 
 // Add services to the container.
 
@@ -8,6 +15,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddCors();
 
 var app = builder.Build();
 
@@ -20,7 +29,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors(Options => Options.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader());
+app.UseCors(options => 
+options.WithOrigins("http://localhost:3000")
+    .AllowAnyMethod()
+    .AllowAnyHeader());
 
 app.UseAuthorization();
 

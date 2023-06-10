@@ -1,10 +1,8 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 export default function RootLayout() {
   return (
     <div className="rootLayout">
-      RootLayout
       <header>
         <nav>
           <h1>Router</h1>
@@ -13,6 +11,11 @@ export default function RootLayout() {
           <NavLink to="contact">Contact</NavLink>
         </nav>
       </header>
+
+      <main>
+        <Outlet />
+      </main>
+      
     </div>
   );
 }
