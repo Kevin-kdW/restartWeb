@@ -9,7 +9,7 @@ namespace API.Models
     {
         public int Id { get; set; }
         public string Name { get; set; } = default!;
-        public List<Sock> Socks { get; set; } = default!;
         public int SockId { get; set; }
+        public Sock Sock { get; set; }
     }
 }

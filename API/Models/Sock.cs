@@ -6,5 +6,6 @@ namespace API.Models
         public string Name { get; set; } = default!;
         public string Brand { get; set; } = default!;
         public List<SockManufacturer> SockManufacturers { get; set; } = default!;
+        public List<SockShops> SockShops { get; set; } = new List<SockShops>();
     }
 }
