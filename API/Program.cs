@@ -4,10 +4,10 @@ using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<Lab6Context>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Lab6Context") ?? 
-    throw new InvalidOperationException("CString for 'Lab6Context' isn't working"))
-);
+builder.Services.AddDbContext<Lab7Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection") ?? 
+    throw new InvalidOperationException("CString for 'Lab6Context' isn't working")
+));
 
 // Add services to the container.
 
