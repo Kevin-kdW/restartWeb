@@ -13,13 +13,13 @@ public class Lab7Context : DbContext
   {
   }
 
-  public DbSet<backend.Models.Food> Food { get; set; } = default!;
+  public DbSet<Food> Food { get; set; } = default!;
 
-  public DbSet<backend.Models.Manufacturer> Manufacturer { get; set; } = default!;
+  public DbSet<Manufacturer> Manufacturer { get; set; } = default!;
 
-  public DbSet<backend.Models.ManufacturerFood> ManufacturerFood { get; set; } = default!;
+  public DbSet<ManufacturerFood> ManufacturerFood { get; set; } = default!;
 
-  public DbSet<backend.Models.Vehicle> Vehicle { get; set; } = default!;
+  public DbSet<Vehicle> Vehicle { get; set; } = default!;
 
   protected override void OnModelCreating(ModelBuilder builder)
   {
